@@ -11,6 +11,12 @@ import { HttpClientModule } from  '@angular/common/http';
 import { AuthComponent } from './auth/auth/auth.component';
 import { DatalayerService } from './datalayer.service';
 import { AuthService } from './auth/auth/auth.service';
+import { Routes, RouterModule } from '@angular/router';
+const appRoutes: Routes = [
+  { path: '', redirectTo: '/auth', pathMatch: 'full' },
+  { path: 'auth', component: AuthComponent },
+  { path: 'student-list', component: StudentListComponent }
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +32,9 @@ import { AuthService } from './auth/auth/auth.service';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+   RouterModule.forRoot(appRoutes),
+   
   ],
   providers: [DatalayerService,AuthService],
   bootstrap: [AppComponent]
