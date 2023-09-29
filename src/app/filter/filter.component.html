@@ -1,0 +1,8 @@
+<div>
+    <input type="text" [(ngModel)]="filterText" (input)="filterCountries()" placeholder="Type to filter countries">
+  </div>
+  <div>
+    <ul>
+      <li *ngFor="let country of filteredCountries">{{ country }}</li>
+    </ul>
+  </div>

@@ -1,0 +1,35 @@
+<div class="container">
+<div class="row">
+    <div *ngFor="let student of students">
+        <div class="col-xs-3">
+    <div class="student"  [class.flipped]="flipState[student.name]" (mouseenter)="onMouseEn(student)" (mouseleave)="onMouseLeave(student)">
+
+  <div class="cardList" *ngIf="!flipState[student.name]">
+    <div class=" bg-transparent text-center">
+        <img class="profile_img" src="https://source.unsplash.com/600x300/?student" alt="student dp">
+        <h3>{{student.name}}</h3>
+      </div>
+      <div class="card-body">
+        <p class="mb-0"><strong class="pr-1">Student ID:</strong>321000001</p>
+        <p class="mb-0"><strong class="pr-1">Class:</strong>4</p>
+        <p class="mb-0"><strong class="pr-1">Section:</strong>A</p>
+      </div>
+  </div>
+  <div class="cardDetail" *ngIf="flipState[student.name]">
+    <div class=" bg-transparent text-center">
+        <img class="profile_img" src="https://source.unsplash.com/600x300/?student" alt="student dp">
+        <h3>flipppppp</h3>
+      </div>
+      <div class="card-body">
+        <p class="mb-0"><strong class="pr-1">Student ID:</strong>321000001</p>
+        <p class="mb-0"><strong class="pr-1">Class:</strong>4</p>
+        <p class="mb-0"><strong class="pr-1">Section:</strong>A</p>
+      </div>
+  </div>
+  </div>
+  </div>
+</div>
+</div>
+</div>
+
+
